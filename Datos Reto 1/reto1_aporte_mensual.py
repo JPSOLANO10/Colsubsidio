@@ -170,7 +170,7 @@ def main(data_path: str, out_dir: str):
     comp = pd.DataFrame(filas).sort_values("RMSE_log_cv")
     comp.to_csv(out / "comparacion_modelos_cv.csv", index=False)
 
-    # ---------------- 6. Ajuste del mejor candidato (LightGBM) con búsqueda aleatoria
+    # ---------------- 6. Ajuste del LightGBM con búsqueda aleatoria
     espacio = {"num_leaves": [7, 15, 31], "min_child_samples": [10, 20, 40, 80],
                "learning_rate": [0.02, 0.03, 0.05], "n_estimators": [400, 700, 1000],
                "reg_lambda": [0, 1, 5, 10], "colsample_bytree": [0.6, 0.8, 1.0]}
